@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<x-app>
 <header class="mb-6 relative">
     <img src="/images/gean-blossom.jpg" alt="" class="mb-4 rounded-lg shadow-xl">
     <div class="flex justify-between items-center mb-4">
@@ -28,4 +26,4 @@
      
     <hr>
     @include('_timeline',['tweets'=>$user->tweets])
-@endsection
+</x-app>
