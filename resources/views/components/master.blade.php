@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    @include('layouts.head')
+    @include('_head')
 </head>
 <body>
     <div id="app">
