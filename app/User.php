@@ -42,9 +42,10 @@ class User extends Authenticatable
     //     return 'user_name';
     // }
 
-    public function path()
+    public function path($append='')
     {
-        return route('profile', $this->user_name);
+        $path= route('profile', $this->user_name);
+        return $append ? "{$path}/{$append}":$path;
     }
 
     public function timeline()
