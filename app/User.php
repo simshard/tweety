@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'user_name', 'email', 'password',
+        'name', 'username', 'avatar', 'email', 'password',
     ];
 
     /**
@@ -37,14 +37,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // public function getRouteKeyName()
-    // {
-    //     return 'user_name';
-    // }
+    public function getRouteKeyName()
+    {
+        return 'username';
+    }
 
     public function path($append='')
     {
-        $path= route('profile', $this->user_name);
+        $path= route('profile', $this->username);
         return $append ? "{$path}/{$append}":$path;
     }
 
@@ -62,12 +62,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Tweet::class);
     }
-
-
-
-
-    public function getAvatarAttribute()
+       
+    public function getAvatarAttribute($value)
     {
-        return "https://i.pravatar.cc/200?u=".$this->email;
+        return asset('storage/'.$value);
     }
 }
