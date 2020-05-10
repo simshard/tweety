@@ -3,9 +3,9 @@
 
     <ul>
         @forelse (auth()->user()->follows as $user)
-            <li class="mb-4">
+            <li class="mb-4" >
                 <div >
-                    <a href="{{route('profile',$user)}}" class="flex items-center text-sm">
+                   <div width="600"> <a href="{{route('profile',$user)}}" class="flex items-center text-sm" >
                     <img
                         src="{{ $user->avatar }}"
                         alt=""
@@ -13,7 +13,8 @@
                         width="40"
                         height="40"
                     >
-                    {{ $user->name }}
+                </div>
+                <div  >{{ $user->name }}</div> 
                 </a>
                 </div>
             </li>

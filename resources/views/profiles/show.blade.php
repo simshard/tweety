@@ -5,14 +5,14 @@
         <img
             src="{{ $user->avatar }}"
             alt=""
-            class="rounded-full mr-2 absolute bottom-0 transform -translate-x-1/2 translate-y-1/2"
+            class="rounded-full mr-2 absolute bottom-0 transform -translate-x-1/2 translate-y-1/2 mb-6"
             style="left:50% "
             width="150"
         >
 </div>
     
     <div class="flex justify-between items-center mb-6">
-        <div>
+        <div style="max-width:270">
             <h2 class="font-bold text-2l mb-0">{{$user->name}}</h2>
             <p class="text-sm">joined {{$user->created_at->diffForHumans()}}</p>
         </div>
@@ -24,7 +24,7 @@
             <x-follow-button :user=$user></x-follow-button>
         </div>
     </div>
-        <p class="text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        <p class="text-sm mt-6">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
              Minus, fuga eveniet?</p>
         
     
@@ -32,5 +32,5 @@
 </header>
      
     <hr>
-    @include('_timeline',['tweets'=>$user->tweets])
+    @include('_timeline',['tweets'=>$tweets])
 </x-app>
